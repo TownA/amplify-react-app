@@ -16,12 +16,20 @@
     "cryptoapi": {
       "dependsOn": [
         {
+          "category": "function",
+          "resourceName": "cryptofunction",
           "attributes": [
             "Name",
             "Arn"
-          ],
+          ]
+        },
+        {
           "category": "function",
-          "resourceName": "cryptofunction"
+          "resourceName": "gitHubUsers",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -31,11 +39,12 @@
         "RootUrl": "https://xxchnvfyhl.execute-api.us-east-1.amazonaws.com/dev",
         "ApiId": "xxchnvfyhl"
       },
-      "lastPushTimeStamp": "2023-03-12T01:47:59.540Z",
+      "lastPushTimeStamp": "2023-03-12T19:54:10.661Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-cryptoapp-dev-184202-deployment/amplify-cfn-templates/api/cryptoapi-cloudformation-template.json",
         "logicalId": "apicryptoapi"
-      }
+      },
+      "lastPushDirHash": "XT8K1UJuXiIDQ60GYomUTe/My+k="
     }
   },
   "function": {
@@ -50,20 +59,46 @@
         "Name": "cryptofunction-dev",
         "LambdaExecutionRole": "cryptoappLambdaRoleabd5c8ec-dev"
       },
-      "lastPushTimeStamp": "2023-03-12T01:48:00.186Z",
+      "lastPushTimeStamp": "2023-03-12T19:54:10.310Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-cryptoapp-dev-184202-deployment/amplify-cfn-templates/function/cryptofunction-cloudformation-template.json",
         "logicalId": "functioncryptofunction"
       },
       "s3Bucket": {
         "deploymentBucketName": "amplify-cryptoapp-dev-184202-deployment",
-        "s3Key": "amplify-builds/cryptofunction-504e385974636c4e6b78-build.zip"
+        "s3Key": "amplify-builds/cryptofunction-49534155556550356651-build.zip"
       },
-      "lastBuildTimeStamp": "2023-03-12T01:46:50.036Z",
+      "lastBuildTimeStamp": "2023-03-12T19:06:13.885Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2023-03-12T01:46:53.150Z",
-      "distZipFilename": "cryptofunction-504e385974636c4e6b78-build.zip",
-      "lastPushDirHash": "XrzpT5yeWANX3ztjavy0m7nCg6k="
+      "lastPackageTimeStamp": "2023-03-12T19:06:14.751Z",
+      "distZipFilename": "cryptofunction-49534155556550356651-build.zip",
+      "lastPushDirHash": "zUOyZssJ+YvBxxPUxNoEbpqU3To="
+    },
+    "gitHubUsers": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2023-03-12T19:50:10.608Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-03-12T16:50:50.757Z",
+      "distZipFilename": "gitHubUsers-384c5763587762313439-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-cryptoapp-dev-184202-deployment",
+        "s3Key": "amplify-builds/gitHubUsers-384c5763587762313439-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-cryptoapp-dev-184202-deployment/amplify-cfn-templates/function/gitHubUsers-cloudformation-template.json",
+        "logicalId": "functiongitHubUsers"
+      },
+      "lastPushTimeStamp": "2023-03-12T19:54:10.320Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::791290939125:role/cryptoappLambdaRole0646a18f-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:791290939125:function:gitHubUsers-dev",
+        "Name": "gitHubUsers-dev",
+        "LambdaExecutionRole": "cryptoappLambdaRole0646a18f-dev"
+      },
+      "lastPushDirHash": "DTgNt9CwQ4gcJPKJsVsPMLivfSk="
     }
   }
 }

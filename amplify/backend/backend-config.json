@@ -9,6 +9,14 @@
           ],
           "category": "function",
           "resourceName": "cryptofunction"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "gitHubUsers"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -17,6 +25,11 @@
   },
   "function": {
     "cryptofunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "gitHubUsers": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -36,6 +49,22 @@
         {
           "category": "function",
           "resourceName": "cryptofunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_gitHubUsers_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "gitHubUsers"
+        }
+      ]
+    },
+    "AMPLIFY_function_gitHubUsers_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "gitHubUsers"
         }
       ]
     }

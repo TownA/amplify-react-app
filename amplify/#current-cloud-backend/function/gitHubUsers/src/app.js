@@ -25,52 +25,17 @@ app.use(function(req, res, next) {
   next()
 });
 
-/* Textbook code */
-const axios = require('axios')
-
-app.get('/coins', function(req, res) {
-  // Define base url
-  let apiUrl = `https://api.coinlore.com/api/tickers?start=0&limit=10`
-
-  // Check if there are any query string parameters
-  // If so, reset the base url to include them
-  if (req.apiGateway && req.apiGateway.event.queryStringParameters) {
-   const { start = 0, limit = 10 } = req.apiGateway.event.queryStringParameters
-   apiUrl = `https://api.coinlore.com/api/tickers/?start=${start}&limit=${limit}`
-  }
-
-  // Call API and return response
-  axios.get(apiUrl)
-    .then(response => {
-      res.json({  coins: response.data.data })
-    })
-    .catch(err => res.json({ error: err }))
-});
-
-/* End Textbook code */
-
-/* Get Github user information */
-app.get("/born", function(req, res) {
-  
-  let gitHubUrl = "https://api.github.com/users/TownA";
-
-  axios.get(gitHubUrl).then((response) => {
-        res.json({ born: response.data });
-      })
-    .catch((err) => res.json({ error: err }))
-});
-
 
 /**********************
  * Example get method *
  **********************/
 
-app.get('/item', function(req, res) {
+app.get('/users', function(req, res) {
   // Add your code here
   res.json({success: 'get call succeed!', url: req.url});
 });
 
-app.get('/item/*', function(req, res) {
+app.get('/users/*', function(req, res) {
   // Add your code here
   res.json({success: 'get call succeed!', url: req.url});
 });
@@ -79,12 +44,12 @@ app.get('/item/*', function(req, res) {
 * Example post method *
 ****************************/
 
-app.post('/item', function(req, res) {
+app.post('/users', function(req, res) {
   // Add your code here
   res.json({success: 'post call succeed!', url: req.url, body: req.body})
 });
 
-app.post('/item/*', function(req, res) {
+app.post('/users/*', function(req, res) {
   // Add your code here
   res.json({success: 'post call succeed!', url: req.url, body: req.body})
 });
@@ -93,12 +58,12 @@ app.post('/item/*', function(req, res) {
 * Example put method *
 ****************************/
 
-app.put('/item', function(req, res) {
+app.put('/users', function(req, res) {
   // Add your code here
   res.json({success: 'put call succeed!', url: req.url, body: req.body})
 });
 
-app.put('/item/*', function(req, res) {
+app.put('/users/*', function(req, res) {
   // Add your code here
   res.json({success: 'put call succeed!', url: req.url, body: req.body})
 });
@@ -107,12 +72,12 @@ app.put('/item/*', function(req, res) {
 * Example delete method *
 ****************************/
 
-app.delete('/item', function(req, res) {
+app.delete('/users', function(req, res) {
   // Add your code here
   res.json({success: 'delete call succeed!', url: req.url});
 });
 
-app.delete('/item/*', function(req, res) {
+app.delete('/users/*', function(req, res) {
   // Add your code here
   res.json({success: 'delete call succeed!', url: req.url});
 });

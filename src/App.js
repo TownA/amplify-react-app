@@ -4,6 +4,7 @@ import config from './aws-exports';
 import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
 import './App.css';
+import { GitHubUser } from "./gitHubUserCreated";
 Amplify.configure(config);
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
   const [loading, updateLoading] = useState(true);
 
   // Create a new function to allow users to update the input values
-  function updateInputValues(type, value) {
+  const updateInputValues = (type, value) => {
     updateInput({ ...input, [type]: value })
   };
 
@@ -28,7 +29,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetchCoins()
+    fetchCoins();
   }, []);
 
   
@@ -57,6 +58,9 @@ function App() {
           </div>
         ))
       }
+
+      <GitHubUser/>
+
     </div>
   );
 }

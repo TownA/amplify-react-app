@@ -169,6 +169,18 @@
               "Outputs.Arn"
             ]
           },
+          "functiongitHubUsersName": {
+            "Fn::GetAtt": [
+              "functiongitHubUsers",
+              "Outputs.Name"
+            ]
+          },
+          "functiongitHubUsersArn": {
+            "Fn::GetAtt": [
+              "functiongitHubUsers",
+              "Outputs.Arn"
+            ]
+          },
           "env": "dev"
         }
       }
@@ -179,7 +191,18 @@
         "TemplateURL": "https://s3.amazonaws.com/amplify-cryptoapp-dev-184202-deployment/amplify-cfn-templates/function/cryptofunction-cloudformation-template.json",
         "Parameters": {
           "deploymentBucketName": "amplify-cryptoapp-dev-184202-deployment",
-          "s3Key": "amplify-builds/cryptofunction-504e385974636c4e6b78-build.zip",
+          "s3Key": "amplify-builds/cryptofunction-49534155556550356651-build.zip",
+          "env": "dev"
+        }
+      }
+    },
+    "functiongitHubUsers": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-cryptoapp-dev-184202-deployment/amplify-cfn-templates/function/gitHubUsers-cloudformation-template.json",
+        "Parameters": {
+          "deploymentBucketName": "amplify-cryptoapp-dev-184202-deployment",
+          "s3Key": "amplify-builds/gitHubUsers-384c5763587762313439-build.zip",
           "env": "dev"
         }
       }

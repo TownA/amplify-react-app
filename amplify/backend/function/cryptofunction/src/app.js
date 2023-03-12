@@ -47,6 +47,20 @@ app.get('/coins', function(req, res) {
     .catch(err => res.json({ error: err }))
 });
 
+/* End Textbook code */
+
+/* Get Github user information */
+app.get("/born", function(req, res) {
+  
+  let gitHubUrl = "https://api.github.com/users/TownA";
+
+  axios.get(gitHubUrl).then((response) => {
+        res.json({ born: response.data });
+      })
+    .catch((err) => res.json({ error: err }))
+});
+
+
 /**********************
  * Example get method *
  **********************/
